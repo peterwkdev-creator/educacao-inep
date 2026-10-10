@@ -60,4 +60,4 @@ four networks — so every trap above has a test that fails when it returns.
 Data: [INEP — IDEB results](https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb/resultados),
 Ministry of Education, Brazil. Public data.
 
-Code: AGPL-3.0.
+Code: AGPL-3.0-or-later.
