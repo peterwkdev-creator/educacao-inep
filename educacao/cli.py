@@ -243,7 +243,7 @@ def cmd_exportar(args, *_) -> int:
         "edicoes": edicoes,
         # As edições em que o INEP NÃO publicou meta. 2005 é linha de base e o
         # primeiro ciclo do IDEB encerrou em 2021 (Portaria 26/2024): exibir
-        # meta para 2023 inventaria um alvo que não existe.
+        # meta para 2023 ou 2025 inventaria um alvo que não existe.
         "edicoesSemMeta": [
             e for i, e in enumerate(edicoes)
             if not any(p[0] == i and p[2] is not None
@@ -288,10 +288,10 @@ def montar() -> argparse.ArgumentParser:
                        help="a rede lida; o padrão é a municipal, que é a que "
                             "pareia com o orçamento do município")
         if nome == "ingerir":
-            s.add_argument("--regiao", default="NE", choices=sorted(REGIOES),
-                           help="NE (padrão) filtra o Nordeste; BR não filtra")
-            s.add_argument("--ano", type=int, default=2023,
-                           help="a divulgação; a de 2023 traz as 10 edições")
+            s.add_argument("--regiao", default="BR", choices=sorted(REGIOES),
+                           help="BR (padrão) não filtra; NE filtra o Nordeste")
+            s.add_argument("--ano", type=int, default=2025,
+                           help="a divulgação; a de 2025 traz as 11 edições")
             s.add_argument("--etapa", default="anos_iniciais",
                            choices=("anos_iniciais", "anos_finais", "todas"))
         else:

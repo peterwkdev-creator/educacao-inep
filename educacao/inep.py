@@ -22,10 +22,11 @@ por quem já entendera as quatro, concordava por construção.
 5. **Número vem como texto com ressalva colada:** `"206,95**"`, e `"ND*"` é
    ausência **com** ressalva. A legenda está no **rodapé** da planilha, não no
    cabeçalho. Ver `MARCAS`.
-6. **2005 e 2023 não têm meta.** 2005 é a linha de base (as metas começam em
-   2007) e o primeiro ciclo do IDEB encerrou em 2021 — a Portaria 26/2024 criou
-   grupo para definir as novas. Exibir meta para 2023 seria inventar uma que não
-   existe; o leitor devolve `None` e quem apresenta tem de dizer por quê.
+6. **2005, 2023 e 2025 não têm meta.** 2005 é a linha de base (as metas
+   começam em 2007) e o primeiro ciclo do IDEB encerrou em 2021 — a Portaria
+   26/2024 criou grupo para definir as novas. Exibir meta para 2023 ou 2025
+   seria inventar uma que não existe; o leitor devolve `None` e quem apresenta
+   tem de dizer por quê.
 """
 
 from __future__ import annotations
@@ -131,12 +132,14 @@ class LinhaIdeb:
             self.nota_matematica, self.indicador_rendimento))
 
 
-def url_de(etapa: str, ano: int = 2023) -> str:
+def url_de(etapa: str, ano: int = 2025) -> str:
     """A URL do zip de uma etapa.
 
-    Só o ano mais recente existe neste padrão: `..._2019.zip` e `..._2021.zip`
-    dão **404**. Não é problema — o arquivo de 2023 traz as dez edições desde
-    2005 em colunas, então a série sai de um download só.
+    Só os anos mais recentes existem neste padrão: `..._2019.zip` e
+    `..._2021.zip` dão **404**. Não é problema — o arquivo de 2025 traz as onze
+    edições desde 2005 em colunas, então a série sai de um download só. Medido
+    em 11/10/2026: as edições de 2005 a 2023 do arquivo de 2025 são idênticas
+    às do de 2023 (observado e meta, linha a linha).
     """
     if etapa not in ETAPAS:
         raise ValueError(f"etapa desconhecida: {etapa!r}; use {sorted(ETAPAS)}")

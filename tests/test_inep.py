@@ -211,7 +211,7 @@ class UrlDaFonte(unittest.TestCase):
     def test_monta_a_url_da_etapa(self):
         self.assertEqual(
             inep.url_de("anos_finais"),
-            f"{inep.BASE}/divulgacao_anos_finais_municipios_2023.zip")
+            f"{inep.BASE}/divulgacao_anos_finais_municipios_2025.zip")
 
     def test_etapa_desconhecida_falha(self):
         with self.assertRaises(ValueError):
