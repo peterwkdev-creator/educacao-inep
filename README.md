@@ -1,5 +1,7 @@
 # educacao-inep
 
+> **Moved, and archived.** Since 2026-10-18 this engine lives in [`motores/educacao-inep/`](https://github.com/peterwkdev-creator/numeros-publicos/tree/main/motores/educacao-inep) of [numeros-publicos](https://github.com/peterwkdev-creator/numeros-publicos), with its full history. This repository is read-only and no longer updated.
+
 Reads Brazil's **IDEB** — the federal basic-education index — for every
 municipality, straight from the INEP spreadsheet, and turns it into a small
 SQLite database and a JSON snapshot.
